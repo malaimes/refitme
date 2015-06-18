@@ -1,0 +1,39 @@
+<article class="category">
+
+  <h3> Прайс-лист на ремонт <%= best_in_place category, :title %> </h3><% if user_signed_in? %>
+        <% if current_user.admin? %>
+        | <%= link_to 'Edit', edit_category_path(@category), class: "btn btn--m"%>
+        <%end%>
+        <%end%>
+
+</article>
+
+
+<table>
+  <tr>
+    <th width="300">Тип Ремонта</th>
+    <th width="90">Цена, грн</th>
+  </tr>
+  <% category.units.each do |unit| %>
+	  <tr>
+	    <td><%= unit.title %></td>
+	    <td><%= unit.price %></td>
+	    <% if user_signed_in? %>
+        <% if current_user.admin? %>
+	    <td><%= link_to "Edit", edit_category_unit_path(category, unit), class: "btn btn--s"%>
+	    	<%= link_to "Delete", category_unit_path(category, unit), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn--s"%>
+	    </td>
+	     <%end%>
+        <%end%>
+	  </tr>
+  <% end %>
+</table>
+<% if user_signed_in? %>
+        <% if current_user.admin? %>
+<h2>Add a unit:</h2>
+<%= render 'units/form' %>
+	     <%end%>
+        <%end%>
+
+
+

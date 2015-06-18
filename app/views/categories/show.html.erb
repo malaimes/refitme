@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @category.title %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @category.image %>
+</p>
+	    <% if user_signed_in? %>
+        <% if current_user.admin? %>
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>
+
+
+<h2>Units</h2>
+<% @category.units.each do |unit| %>
+  <p>
+    <%= unit.title %>
+    <%= unit.price %>
+  </p>
+<% end %>
+
+
+<h2>Add a unit:</h2>
+<%= render 'units/form' %>
+
+	     <%end%>
+        <%end%>

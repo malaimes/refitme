@@ -1,0 +1,16 @@
+<h1>Edit unit</h1>
+
+<%= form_for([@category, @unit]) do |f| %>
+	<p>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</p>
+	<p>
+		<%= f.label :price %>
+		<%= f.text_field :price %>
+	</p>
+
+	<p>
+		<%= f.submit%>
+	</p>
+<% end %>
