@@ -2,7 +2,9 @@
 @import 'btns';
 @import 'session';
 @import 'loading-screen';
-
+@import 'home';
+@import 'posts';
+@import 'postshow';
 
 body {
   font-family: 'Open Sans Condensed', sans-serif;
@@ -185,4 +187,20 @@ table {
   
     font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 
+}
+
+
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
 }

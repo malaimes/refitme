@@ -52,4 +52,14 @@ $(window).scroll(function(){
 	    });
  	 }
 
+ 	 if(wScroll > $('.clothes-pics').offset().top - ($(window).height() * 10)) {
+
+	    $('.clothes-pics li').each(function(i){
+
+	      setTimeout(function(){
+	        $('.clothes-pics li').eq(i).addClass('is-showing');
+	      	}, 150 * (i+1));
+	    });
+ 	 }
+
 });

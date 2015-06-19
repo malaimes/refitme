@@ -4,6 +4,13 @@ Rails.application.routes.draw do
   resources :categories do
     resources :units
   end
+  resources :posts do
+    member do
+      get "like", to: "posts#upvote"
+      get "dislike", to: "posts#downvote"
+    end
+    resources :comments
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
