@@ -40,13 +40,4 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-config.paperclip_defaults = {
-        :storage => :fog,
-        :fog_credentials => {
-          :provider => "AWS",
-          :aws_access_key_id => ENV['AKIAJXJ7W7ZQCIIKGG5A'],
-          :aws_secret_access_key => ENV['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'],
-        },
-        :fog_directory => ENV["refime"],
-      }
 end
