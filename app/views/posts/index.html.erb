@@ -7,7 +7,7 @@
     <%= current_user.username %>
     <br/>
     <span>
-      Share your inspiration and see what's inspiring others.
+      RefitMe | Все про iPhone, iPad и Mac. Новости Apple, обзоры программ, игр. 
     </span> <br/>
     <% if current_user.admin? %>
     <%= link_to "Add New Inspiration", new_post_path, class: "btn btn--m" %>
@@ -15,10 +15,10 @@
   </p>
 <% else %>
   <p id="intro">
-    What's your muse?
+    RefitMe | Новости из мира Apple
     <br/>
     <span>
-      Share your inspiration and see what's inspiring others.
+      Все про iPhone, iPad и Mac. Новости Apple, обзоры программ, игр. 
     </span>
   </p>
 <% end %>
