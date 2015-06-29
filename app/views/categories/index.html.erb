@@ -201,18 +201,18 @@ var bcf_settings = { buttonText:'Заказать звонок', buttonTop:'30%'
           <form class="row">
             <div class="small-6 large-6 columns">
             </div>
-            <div class="small-6 large-6 columns"> 
+            <div itemscope itemtype="http://schema.org/LocalBusiness" class="small-6 large-6 columns"> 
                <address>
-                    <strong>Refitme, Inc.</strong><br>
+                    <strong><span itemprop="name">Refitme</span>, Inc.</strong><br>
                     <abbr title="Phone"></abbr>
-                      <%= link_to '<i class="fa fa-phone"></i> (063) 603 51 87'.html_safe, "tel:+380636035187" %><br>
+                      <%= link_to '<span itemprop="telephone"><i class="fa fa-phone"></i> (063) 603 51 87</span>'.html_safe, "tel:+380636035187" %><br>
                     <abbr title="Phone"></abbr> 
-                    <%= link_to '<i class="fa fa-phone"></i> (066) 272 48 78'.html_safe, "tel:+380662724878" %>
+                    <%= link_to '<span itemprop="telephone"><i class="fa fa-phone"></i> (066) 272 48 78</span>'.html_safe, "tel:+380662724878" %>
                   </address>
 
                   <address>
                     <strong>Наш e-mail:</strong><br>
-                    <a href="mailto:support@refitme.com"><i class="fa fa-paper-plane"></i> support@refitme.com</a>
+                    <a href="mailto:support@refitme.com"><span itemprop="email"><i class="fa fa-paper-plane"></i> support@refitme.com</span></a>
                   </address>
             </div>
           </form>
