@@ -15,9 +15,9 @@ var bcf_settings = { buttonText:'Заказать звонок', buttonTop:'30%'
 <section class="content">
   <article>
    <p id="intro">
-           Прайс-лист на ремонт <%= @category.title %> </p><% if user_signed_in? %>
+           Прайс-лист на ремонт <%= @category.title %> <% if user_signed_in? %>
           <% if current_user.admin? %>
-          | <%= link_to 'Edit', edit_category_path(@category), class: "btn btn--m"%>
+          | <%= link_to 'Edit', edit_category_path(@category), class: "btn btn--m"%> </p>
           <%end%>
           <%end%>
 
@@ -40,8 +40,8 @@ var bcf_settings = { buttonText:'Заказать звонок', buttonTop:'30%'
         <td><%= unit.price %></td>
         <% if user_signed_in? %>
           <% if current_user.admin? %>
-        <td><%= link_to "Edit", edit_category_unit_path(category, unit), class: "btn btn--s"%>
-          <%= link_to "Delete", category_unit_path(category, unit), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn--s"%>
+        <td><%= link_to "Edit", edit_category_unit_path(@category, unit), class: "btn btn--s"%>
+          <%= link_to "Delete", category_unit_path(@category, unit), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn--s"%>
         </td>
          <%end%>
           <%end%>
