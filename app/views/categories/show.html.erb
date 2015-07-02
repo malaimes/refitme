@@ -1,31 +1,137 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @category.title %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @category.image %>
-</p>
-	    <% if user_signed_in? %>
-        <% if current_user.admin? %>
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<% title "выездной ремонт #{@category.title} в Киеве".html_safe %>
 
 
-<h2>Units</h2>
-<% @category.units.each do |unit| %>
-  <p>
-    <%= unit.title %>
-    <%= unit.price %>
-  </p>
-<% end %>
+
+<script type="text/javascript">
+var bcf_settings = { buttonText:'Заказать звонок', buttonTop:'30%', language:'ru_RU' };
+(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0]; js = d.createElement(s); js.id = id;
+    js.src = "//bettercontactform.com/contact/media/b/e/be2251a149693f27320e5fa17dc86f8bb445f5b1.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, "script", "bcf-render"));</script>
+<a id="bcf_trigger" href="http://bettercontactform.com" rel="bcf_trigger">Contact Form</a>
+
+<section class="content">
+  <article>
+   <p id="intro">
+           Прайс-лист на ремонт <%= @category.title %> </p><% if user_signed_in? %>
+          <% if current_user.admin? %>
+          | <%= link_to 'Edit', edit_category_path(@category), class: "btn btn--m"%>
+          <%end%>
+          <%end%>
+
+<div class="row clearfix">
+  <div class="small-3 large-3 columns">
+    <%=image_tag @category.image %>
+  </div>
 
 
-<h2>Add a unit:</h2>
-<%= render 'units/form' %>
+  <div class="small-6 large-6 columns">
 
-	     <%end%>
-        <%end%>
+  <table>
+    <tr>
+      <th width="300">Тип Ремонта</th>
+      <th width="90">Цена, грн</th>
+    </tr>
+    <% @category.units.each do |unit| %>
+      <tr>
+        <td><%= unit.title %></td>
+        <td><%= unit.price %></td>
+        <% if user_signed_in? %>
+          <% if current_user.admin? %>
+        <td><%= link_to "Edit", edit_category_unit_path(category, unit), class: "btn btn--s"%>
+          <%= link_to "Delete", category_unit_path(category, unit), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn--s"%>
+        </td>
+         <%end%>
+          <%end%>
+      </tr>
+    <% end %>
+  </table>
+  <% if user_signed_in? %>
+          <% if current_user.admin? %>
+  <h2>Add a unit:</h2>
+  <%= render 'units/form' %>
+         <%end%>
+          <%end%>
+
+
+  </div>
+
+  <div class="small-3 large-3 columns ">
+                    <h3>Наши контакы: </h3>
+                      <address>
+                        <strong>Refitme, Inc.</strong><br>
+                        <abbr title="Phone"></abbr>
+                          <%= link_to '<i class="fa fa-phone"></i> (063) 603 51 87'.html_safe, "tel:+380636035187" %><br>
+                        <abbr title="Phone"></abbr> 
+                        <%= link_to '<i class="fa fa-phone"></i> (066) 272 48 78'.html_safe, "tel:+380662724878" %>
+                      </address>
+
+                      <address>
+                        <strong>Наш e-mail:</strong><br>
+                        <a href="mailto:support@refitme.com"><i class="fa fa-paper-plane"></i> support@refitme.com</a>
+                      </address>
+  </div>
+              
+
+   
+  </div>
+</div>
+
+  </article>
+  </section>
+  <footer>
+      <div class="row footer-stuff">
+        <div class="small-2 large-2 columns"><strong>FIND US ON:</strong>
+          <ul>
+            <li><%= link_to '<i class="fa fa-twitter"></i>  Twitter'.html_safe, "https://twitter.com/Refit_me", :target => "_blank" %></li>
+            <li><%= link_to '<i class="fa fa-facebook-square"></i>  Facebook'.html_safe, "https://www.facebook.com/groups/1571610346392612/", :target => "_blank" %></li>
+            <li><%= link_to '<i class="fa fa-vk"></i>  Вконтакте'.html_safe, "http://vk.com/refitme", :target => "_blank" %></li>
+            <li><%= link_to '<i class="fa fa-instagram"></i>  Instagram'.html_safe, "https://instagram.com/refitme_inc/", :target => "_blank" %></li>
+          </ul>
+        </div>
+        <div class="small-2 large-2 columns"><br>
+          <ul>
+            <li><%= link_to '<i class="fa fa-google-plus"></i></i>  Google +'.html_safe, "https://plus.google.com/communities/101878631254407544893", :target => "_blank" %></li>
+            <li><%= link_to '<i class="fa fa-youtube"></i>  YouTube'.html_safe, "https://www.youtube.com/channel/UCPjOeF45UJq-EoxLOE2BXBA", :target => "_blank" %></li>
+            <li><%= link_to '<i class="fa fa-flickr"></i>  flickr'.html_safe, "https://www.flickr.com/photos/133393602@N06", :target => "_blank" %></li>
+            <li><%= link_to '<i class="fa fa-skype"></i>  Skype'.html_safe, "skype:refitme.support?chat", :target => "_blank" %></li>
+            
+          </ul>
+        </div>
+        <div class="small-6 large-6 columns">
+          <form class="row">
+            <div class="small-6 large-6 columns">
+            </div>
+            <div class="small-6 large-6 columns"> 
+               <address>
+                    <strong>Refitme, Inc.</strong><br>
+                    <abbr title="Phone"></abbr>
+                      <%= link_to '<i class="fa fa-phone"></i> (063) 603 51 87'.html_safe, "tel:+380636035187" %><br>
+                    <abbr title="Phone"></abbr> 
+                    <%= link_to '<i class="fa fa-phone"></i> (066) 272 48 78'.html_safe, "tel:+380662724878" %>
+                  </address>
+
+                  <address>
+                    <strong>Наш e-mail:</strong><br>
+                    <a href="mailto:support@refitme.com"><i class="fa fa-paper-plane"></i> support@refitme.com</a>
+                  </address>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+      <div class="small-4 large-4 columns">
+      <p></p>
+      </div>
+      <div class="small-5 large-5 columns">
+      <div class="malaimes">
+      <h6>©<%= Time.now.year %> RefitMe, Designed and built by malaimés ·</h6>
+      </div>
+      </div>
+      <div class="small-3 large-3 columns">
+      <p></p>
+      </div>
+      </div>
+    </footer>
