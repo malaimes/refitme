@@ -30,7 +30,7 @@
   <% @posts.each do |post| %>
     <li class="post is-showing">
       <div class="post_image">
-        <%= link_to (image_tag post.image.url(:small)), post %>
+        <%= link_to((image_tag(post.image.url(:small), alt: "RefitMe | #{post.title}".html_safe)), post) %>
       </div>
       <div class="post_content">
         <div class="title">

@@ -13,7 +13,7 @@
   </p>
   <div class="clearfix">
     <div class="post_image_description">
-      <%= image_tag @post.image.url(:medium) %>
+      <%= image_tag(@post.image.url(:medium), alt: "RefitMe | #{@post.title}".html_safe) %>
       <div class="description">
         <%= simple_format(@post.description) %>
       </div>
@@ -41,7 +41,8 @@
       
       <div class="post">
         <div class="post_image">
-          <%= link_to (image_tag @random_post.image.url(:medium)), post_path(@random_post) %>
+          <%= link_to((image_tag(@random_post.image.url(:medium), alt: "RefitMe | #{@random_post.title}".html_safe)), post_path(@random_post))%>
+
         </div>
         <div class="post_content">
           <div class="title">
