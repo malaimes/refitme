@@ -14,7 +14,7 @@
     <th width="300">Тип Ремонта</th>
     <th width="90">Цена, грн</th>
   </tr>
-  <% category.units.each do |unit| %>
+  <% category.units.order("created_at ASC").each do |unit| %>
 	  <tr>
 	    <td><%= unit.title %></td>
 	    <td><%= unit.price %></td>
