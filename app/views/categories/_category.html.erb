@@ -16,8 +16,8 @@
   </tr>
   <% category.units.order("created_at ASC").each do |unit| %>
 	  <tr>
-	    <td><%= unit.title.html_safe %></td>
-	    <td><%= unit.price.html_safe %></td>
+	    <td><%= unit.title %></td>
+	    <td><%= unit.price %></td>
 	    <% if user_signed_in? %>
         <% if current_user.admin? %>
 	    <td><%= link_to "Edit", edit_category_unit_path(category, unit), class: "btn btn--s"%>
