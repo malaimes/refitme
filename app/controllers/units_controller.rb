@@ -36,6 +36,6 @@ class UnitsController < ApplicationController
 
   private
     def unit_params
-      params.require(:unit).permit( :title, :price )
+      params.require(:unit).permit( :title, :price, :tooltip )
     end
 end

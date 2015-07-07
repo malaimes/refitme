@@ -15,7 +15,7 @@
     <div class="post_image_description">
       <%= image_tag(@post.image.url(:medium), alt: "RefitMe | #{@post.title}".html_safe) %>
       <div class="description">
-        <%= simple_format(@post.description) %>
+        <%= simple_format(@post.description, {}, :sanitize => false) %>
       </div>
     </div>
     <div class="post_data">
