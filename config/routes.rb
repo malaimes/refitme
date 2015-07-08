@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register', password: 'password', confirmation: 'confirmation' }
   root 'categories#index'
   resources :categories do
     resources :units
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     end
     resources :comments
   end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
