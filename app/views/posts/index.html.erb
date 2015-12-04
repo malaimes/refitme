@@ -41,7 +41,7 @@
         <div class="data clearfix">
           <p class="username">
             Shared by
-            <%= post.user.username %>
+            <%= post.user.username + " about " + time_ago_in_words(post.created_at)%>
           </p>
           <p class="buttons">
             <span>
