@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
 	extend FriendlyId
-  	friendly_id :title, use: :slugged
+  	friendly_id :title, use: [:slugged, :finders]
 	acts_as_votable
 	belongs_to :user
 	has_many :comments
