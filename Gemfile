@@ -30,6 +30,8 @@ gem 'best_in_place', '~> 3.0.3'
 gem 'kaminari'
 gem 'paperclip', '~> 4.3.0'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'friendly_id'
+gem 'babosa'
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'devise'
