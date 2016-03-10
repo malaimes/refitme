@@ -4,14 +4,29 @@
 
 
 
-<script type="text/javascript">
-var bcf_settings = { buttonText:'Заказать звонок', buttonTop:'30%', language:'ru_RU' };
-(function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0]; js = d.createElement(s); js.id = id;
-    js.src = "https://bettercontactform.com/contact/media/b/e/be2251a149693f27320e5fa17dc86f8bb445f5b1.js";
-    fjs.parentNode.insertBefore(js, fjs);
-    }(document, "script", "bcf-render"));</script>
-<a id="bcf_trigger" href="https://bettercontactform.com" rel="bcf_trigger">Contact Form</a>
+<!-- project code -->
+<script>
+    (function() {
+        var config = {
+            API_BASE: 'http://connect.f1call.com',
+            PROJECT_NAME: 'project',
+        };
+
+        if (typeof window[config.PROJECT_NAME] === 'undefined' && typeof CallPluginInitObject === 'undefined') {
+            window['CallPluginInitObject'] = config;
+
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = config.API_BASE + '/static/api.js';
+            var x = document.getElementsByTagName('head')[0];
+            x.appendChild(s);
+        }
+        else
+            console.log(config.PROJECT_NAME + ' is already defined.');
+    })();
+</script>
+<!-- project code end -->
 
 <section class="content">
   <article>
