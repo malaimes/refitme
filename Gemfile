@@ -37,6 +37,7 @@ gem 'friendly_id'
 gem 'babosa'
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem 'nokogiri', '~> 1.4'
 gem 'devise', '~> 3.5.1'
 gem 'rails_12factor', '~> 0.0.3'
 # Use Capistrano for deployment

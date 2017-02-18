@@ -215,6 +215,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
+  nokogiri (~> 1.4)
   paperclip (~> 4.3.0)
   pg
   puma
