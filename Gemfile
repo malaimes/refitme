@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "rails", "~> 4.1.x"
@@ -36,8 +36,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'friendly_id'
 gem 'babosa'
 # Use Unicorn as the app server
-# gem 'unicorn'
-gem 'nokogiri', '~> 1.4'
+
 gem 'devise', '~> 3.5.1'
 gem 'rails_12factor', '~> 0.0.3'
 # Use Capistrano for deployment
