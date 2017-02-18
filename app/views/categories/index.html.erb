@@ -99,7 +99,7 @@
     <div class="clothes-pics">  
       <ul class="small-block-grid-6", id="sidebar">
       <% for category in @categories %>
-        <li class="post"><%= link_to image_tag(category.image, alt: "ремонт #{category.title} Киев".html_safe ), category_path(category), "data-reveal-id" => "myModal", remote: true %>
+        <li class="post"><%= link_to image_tag(category.image, alt: "ремонт #{category.title} Киев".html_safe ), category_path(category), "data-reveal-id" => "myModal", remote: true, class: "image-category"%>
           <div class="figcaption">Прайс для <%= category.title %> </div>
         </li>
       <% end %>

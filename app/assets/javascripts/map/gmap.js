@@ -138,8 +138,7 @@ function loadScript() {
   script.type = 'text/javascript';
   //'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAh0n8lkq95shhyeHENIs0_ig_7O_7XLds&sensor=false&libraries=drawing'
   script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp' +
-    //'&v=3.14'+
-    //'&key=AIzaSyAh0n8lkq95shhyeHENIs0_ig_7O_7XLds'+
+    '&key=AIzaSyAW3UntOyhPmmngpKjjfM7ohm-8LLXRXI4'+
     '&libraries=drawing'+
     '&callback=initialize';
   document.body.appendChild(script);

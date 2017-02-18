@@ -4,7 +4,10 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "rails", "~> 4.1.x"
 # Use postgresql as the database for Active Record
+
 gem 'pg'
+
+
 gem "aws-sdk", "< 2.0"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -25,7 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'foundation-rails'
+gem 'foundation-rails', '~> 5.5.1.1'
 gem 'best_in_place', '~> 3.0.3'
 gem 'kaminari'
 gem 'paperclip', '~> 4.3.0'
@@ -34,7 +37,7 @@ gem 'friendly_id'
 gem 'babosa'
 # Use Unicorn as the app server
 # gem 'unicorn'
-gem 'devise'
+gem 'devise', '~> 3.5.1'
 gem 'rails_12factor', '~> 0.0.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
