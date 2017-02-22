@@ -30,12 +30,6 @@
 
 <section class="content">
   <article>
-   <p id="intro">
-           Прайс-лист на ремонт <%= @category.title %> <% if user_signed_in? %>
-          <% if current_user.admin? %>
-          | <%= link_to 'Edit', edit_category_path(@category), class: "btn btn--m"%> </p>
-          <%end%>
-          <%end%>
 
 <div class="row clearfix">
   <div class="small-3 large-3 columns">
@@ -43,63 +37,40 @@
   </div>
 
 
-  <div class="small-6 large-6 columns">
+<div class="small-9 large-9 columns">
 
-  <table>
-    <tr>
-      <th width="300">Тип Ремонта</th>
-      <th width="90">Цена, грн</th>
-    </tr>
-    <% @category.units.each do |unit| %>
-      <tr>
-        <td><%= unit.title %></td>
-        <td><%= unit.price %></td>
-        <% if user_signed_in? %>
+   <p id="intro">
+           Прайс-лист на ремонт <%= @category.title %> <% if user_signed_in? %>
           <% if current_user.admin? %>
-        <td><%= link_to "Edit", edit_category_unit_path(@category, unit), class: "btn btn--s"%>
-          <%= link_to "Delete", category_unit_path(@category, unit), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn--s"%>
-        </td>
-         <%end%>
+          | <%= link_to 'Edit', edit_category_path(@category), class: "btn btn--m"%> </p>
           <%end%>
-      </tr>
-    <% end %>
-  </table>
-  <% @category.units.each do |unit| %>
-    <p><%= unit.tooltip %></p>
-  <% end %>
-
-  <% if user_signed_in? %>
-          <% if current_user.admin? %>
-  <h2>Add a unit:</h2>
-  <%= render 'units/form' %>
-         <%end%>
           <%end%>
-
-
+          
+  <div class="columns-price">
+    <% @category.units.order("created_at ASC").each do |unit| %>
+      <div class="unit-columns">
+        <span class="left">
+          <span class="service_name"><%= unit.title %></span>
+        </span>
+        <span class="right">
+          <%= unit.price %> грн.
+        </span>    
+      </div>
+    <%end%>
   </div>
-
-  <div class="small-3 large-3 columns ">
-                    <h3>Наши контакы: </h3>
-                      <address>
-                        <strong>Refitme, Inc.</strong><br>
-                        <abbr title="Phone"></abbr>
-                          <%= link_to '<i class="fa fa-phone"></i> (063) 603 51 87'.html_safe, "tel:+380636035187" %><br>
-                        <abbr title="Phone"></abbr> 
-                        <%= link_to '<i class="fa fa-phone"></i> (066) 272 48 78'.html_safe, "tel:+380662724878" %>
-                      </address>
-
-                      <address>
-                        <strong>Наш e-mail:</strong><br>
-                        <a href="mailto:support@refitme.com"><i class="fa fa-paper-plane"></i> support@refitme.com</a>
-                      </address>
-
-                      
-  </div>
-              
-
+<div class="clear"></div>
+  <div class="head">
+      <div class="note">Не нашли в списке свою неисправность?<br />Звоните по номеру <span>(063) 603 51 87</span>,
+        мы поможем!
+      </div>
+    </div>
    
   </div>
 </div>
+
+</div>
+ 
+
 
   </article>
   </section>
