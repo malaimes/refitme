@@ -23,9 +23,9 @@ NO
 <%end%> 
 </td>
 <td>
-<%= link_to 'Изменить', edit_admin_category_path(category), class: "btn btn--m"%>
-<%= link_to 'Список услуг', admin_category_path(category), class: "btn btn--m"%>
-<%= link_to 'Destroy', admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn--m" %>
+<%= link_to '<i class="fa fa-refresh"></i> Изменить'.html_safe, edit_admin_category_path(category), class: "btn btn--m"%>
+<%= link_to '<i class="fa fa-pencil-square-o"></i> Список услуг'.html_safe, admin_category_path(category), class: "btn btn--m"%>
+<%= link_to '<i class="fa fa-times"></i> Удалить'.html_safe, admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn--m" %>
 </td>
 </tr> 
 <% end %>                                     
