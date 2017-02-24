@@ -13,23 +13,6 @@ class PostsController < ApplicationController
 
 	end
 
-	def new
-		@post = current_user.posts.build
-	end
-
-	def create
-		@post = current_user.posts.build(post_params)
-
-		if @post.save
-			redirect_to @post
-		else
-			render 'new'
-		end
-	end
-
-	def edit
-	end
-
 	def update
 		if @post.update(post_params)
 			redirect_to @post

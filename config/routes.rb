@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       resources :units
     end
     resources :users, only: [:index]
-    resources :posts, only: [:index]
+    resources :posts
   end
   
   resources :posts do

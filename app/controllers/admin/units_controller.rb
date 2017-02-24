@@ -27,7 +27,7 @@ class Admin::UnitsController < ApplicationController
     if @unit.update_attributes(unit_params)
       redirect_to admin_category_url(@category)
     else
-      flash[:error] = "That todo item could not be saved."
+      flash[:error] = "Услуга добавлена."
       render action: :edit
     end
   end
@@ -36,9 +36,9 @@ class Admin::UnitsController < ApplicationController
     @category = Category.find(params[:category_id])
     @unit = @category.units.find(params[:id])
     if @unit.destroy
-      flash[:success] = "Todo list item was deleted."
+      flash[:success] = "Услуга удалена."
     else
-      flash[:error] = "Todo list item could not be deleted."
+      flash[:error] = "Ошибка во время удаления услуги."
     end
     redirect_to admin_category_url(@category)
   end
