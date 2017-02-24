@@ -6,6 +6,7 @@ class Admin::PostsController < ApplicationController
 
   def index
     @posts = Post.all
+  end
 
   def require_admin
     unless current_user.admin?
