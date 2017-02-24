@@ -5,8 +5,7 @@ class Admin::PostsController < ApplicationController
 
 
   def index
-    @posts = Post.all.order("created_at DESC").page(params[:page]).per(9)
-  end
+    @posts = Post.all.order("created_at DESC")
 
   def require_admin
     unless current_user.admin?
