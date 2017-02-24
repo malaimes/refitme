@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register', password: 'password', confirmation: 'confirmation' }
   root 'categories#index'
-  resources :categories do
+  resources :categories, only: [:show, :index] do
     resources :units
   end
+
+  namespace :admin do
+    resources :categories do 
+      resources :units
+    end
+    resources :users, only: [:index]
+    resources :posts, only: [:index]
+  end
+  
   resources :posts do
     member do
       get "like", to: "posts#upvote"

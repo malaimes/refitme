@@ -41,13 +41,7 @@
 
 <div class="small-9 large-9 columns">
 
-   <p id="intro">
-           Прайс-лист на ремонт <%= @category.title %> <% if user_signed_in? %>
-          <% if current_user.admin? %>
-          | <%= link_to 'Edit', edit_category_path(@category), class: "btn btn--m"%> </p>
-          <%end%>
-          <%end%>
-
+   <p id="intro">Прайс-лист на ремонт</p>
   <div class="columns-price">
     <% @category.units.order("created_at ASC").each do |unit| %>
       <div class="unit-columns">

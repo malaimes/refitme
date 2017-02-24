@@ -1,0 +1,24 @@
+
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Изменить Категорию</h4>
+                            </div>
+                            <div class="content">
+                              <%= render 'form' %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-user">
+                            <div class="text-center">
+                                <%=image_tag(@category.image) %>
+                            </div>
+                            <hr>
+                            <div class="text-center">
+                               <%= link_to 'Show', admin_category_path(@category)%> | 
+                               <%= link_to 'Back', admin_categories_path%>
+                               
+                            </div>
+                        </div>
+                    </div>
