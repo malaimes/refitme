@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151211092713) do
+ActiveRecord::Schema.define(version: 20170302100617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,10 @@ ActiveRecord::Schema.define(version: 20151211092713) do
     t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "type_id"
   end
+
+  add_index "categories", ["type_id"], name: "index_categories_on_type_id", using: :btree
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -62,6 +65,12 @@ ActiveRecord::Schema.define(version: 20151211092713) do
   end
 
   create_table "sitemaps", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -112,6 +121,7 @@ ActiveRecord::Schema.define(version: 20151211092713) do
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
+  add_foreign_key "categories", "types"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "units", "categories"

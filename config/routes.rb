@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :types
     resources :categories do 
       resources :units
     end

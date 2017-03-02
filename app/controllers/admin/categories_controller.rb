@@ -6,6 +6,7 @@ class Admin::CategoriesController < ApplicationController
 
 
   def index
+    @types = Type.all.order("created_at ASC")
     @categories = Category.all.order("created_at ASC")
   end
 
@@ -66,7 +67,7 @@ class Admin::CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:title, :image)
+      params.require(:category).permit(:title, :image, :type_id)
     end
 
     def require_admin
