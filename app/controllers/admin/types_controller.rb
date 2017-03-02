@@ -31,7 +31,7 @@ class Admin::TypesController < ApplicationController
     @type = Type.new(type_params)
     respond_to do |format|
       if @type.save
-        format.html { redirect_to admin_types_url, notice: 'Type was successfully created.' }
+        format.html { redirect_to admin_types_url, notice: 'Добавлен новый тип девайсов.' }
       else
         format.html { render :new }
       end
@@ -41,7 +41,7 @@ class Admin::TypesController < ApplicationController
   def update
     respond_to do |format|
       if @type.update(type_params)
-        format.html { redirect_to admin_types_url, notice: 'Type was successfully updated.' }
+        format.html { redirect_to admin_types_url, notice: 'Изменен тип девайсов.' }
       else
         format.html { render :edit }
       end
@@ -53,7 +53,7 @@ class Admin::TypesController < ApplicationController
   def destroy
     @type.destroy
     respond_to do |format|
-      format.html { redirect_to admin_types_url, notice: 'Type was successfully destroyed.' }
+      format.html { redirect_to admin_types_url, notice: 'Девайсы и связанные услуги удалены.' }
     end
   end
 

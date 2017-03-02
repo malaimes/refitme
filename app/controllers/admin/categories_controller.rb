@@ -33,7 +33,7 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.new(category_params)
     respond_to do |format|
       if @category.save
-        format.html { redirect_to admin_categories_url, notice: 'Category was successfully created.' }
+        format.html { redirect_to admin_categories_url, notice: 'Добавлена новая категоря.' }
       else
         format.html { render :new }
       end
@@ -43,7 +43,7 @@ class Admin::CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to admin_categories_url, notice: 'Category was successfully updated.' }
+        format.html { redirect_to admin_categories_url, notice: 'Категория успешно изменена.' }
       else
         format.html { render :edit }
       end
@@ -55,7 +55,7 @@ class Admin::CategoriesController < ApplicationController
   def destroy
     @category.destroy
     respond_to do |format|
-      format.html { redirect_to admin_categories_url, notice: 'Category was successfully destroyed.' }
+      format.html { redirect_to admin_categories_url, notice: 'Вы удалили категорию и список услуг.' }
     end
   end
 
