@@ -1,6 +1,8 @@
+
 <div class="card">
+<% for type in @types %>
 <div class="header">
-<h4 class="title">Список Категорий</h4>
+<h4 class="title">Список Категорий для <%= type.title %> </h4>
 <p class="category"></p>
 </div>
 <div class="content table-responsive table-full-width">
@@ -11,7 +13,7 @@
 <th>Управление</th>
 </thead>
 <tbody>
-<% for category in @categories %>
+<% @categories.where(type_id: type.id).each do |category| %>
 <tr>
 <td><%= category.title %></td>
 <td>
@@ -33,6 +35,7 @@ NO
 </table>
 
 </div>
+<%end%>
 </div>
 <%= link_to "Добавить новую категорию", new_admin_category_path, :class => 'btn btn-info btn-fill pull-left' %>
 </div>
