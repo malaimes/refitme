@@ -58,7 +58,7 @@
 
             <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
             <% if current_user.admin? %>
-            <li><%= link_to "Admin Dashboard", admin_categories_path %></li>
+            <li><%= link_to "Admin Dashboard", admin_types_path %></li>
             <%end%>
 
       <% else %>
