@@ -20,8 +20,9 @@ Rails.application.routes.draw do
     end
     resources :comments
   end
-  match '*path' => redirect('/'), via: :get
   get "sitemap" => "sitemap#show", format: :xml, as: :sitemap
+  match '*path' => redirect('/'), via: :get
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
