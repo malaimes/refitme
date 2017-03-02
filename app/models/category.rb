@@ -3,4 +3,5 @@ class Category < ActiveRecord::Base
   belongs_to :type
 	validates :title, presence: true,
                     length: { minimum: 5 }
+  validates :type_id, presence: true
 end
