@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resources :comments
   end
   get "sitemap" => "sitemap#show", format: :xml, as: :sitemap
+  get "google7d0a3ccbe966c9b8" => "static#google7d0a3ccbe966c9b8"
   match '*path' => redirect('/'), via: :get
   
   # The priority is based upon order of creation: first created -> highest priority.
