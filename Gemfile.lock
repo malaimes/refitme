@@ -52,6 +52,7 @@ GEM
     builder (3.2.3)
     byebug (9.0.6)
     climate_control (0.1.0)
+    closure-compiler (1.1.12)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.1.1)
@@ -207,6 +208,7 @@ DEPENDENCIES
   babosa
   best_in_place (~> 3.0.3)
   byebug
+  closure-compiler (~> 1.1, >= 1.1.12)
   coffee-rails (~> 4.1.0)
   devise (~> 3.5.1)
   foundation-rails (~> 5.5.1.1)
