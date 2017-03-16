@@ -9422,7 +9422,7 @@ th.hide-for-touch {
 /* line 4, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/session.scss */
 .login h2 {
   color: #6d7781;
-  font-family: 'Marck Script', cursive;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-size: 10px;
   font-weight: bold;
   font-size: 3.6em;
@@ -9863,7 +9863,7 @@ body {
 .fore-bird {
   width: 960px;
   height: 733px;
-  background-image: url(/assets/qwe-1dfe932055d1ad9ebf5c428c70e473b114482a600f69e0edbc68ca381f7b9649.png);
+  background-image: url(/assets/qwe-3dc1e3875828da49bbafe9ccba5e552faa9d09080b854c77c65bc386b0ad8f45.png);
   background-position: right bottom;
   background-repeat: no-repeat;
   position: absolute;
@@ -9876,7 +9876,7 @@ body {
 .back-bird {
   width: 960px;
   height: 298px;
-  background-image: url(/assets/qwe-1dfe932055d1ad9ebf5c428c70e473b114482a600f69e0edbc68ca381f7b9649.png);
+  background-image: url(/assets/qwe-3dc1e3875828da49bbafe9ccba5e552faa9d09080b854c77c65bc386b0ad8f45.png);
   background-repeat: no-repeat;
   background-position: top left;
   position: absolute;
@@ -9996,64 +9996,67 @@ footer input {
 
 /* line 165, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
 .quote h3 {
-  font-family: 'Kurale', serif;
+  font-family: 'Open Sans Condensed';
 }
 /* line 168, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
 .quote h4 {
-  font-family: 'Marck Script', cursive;
+  font-family: 'Open Sans Condensed';
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.4;
 }
 
-/* line 173, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
-.quote2 h3 {
-  font-family: 'Kurale', serif;
-}
 /* line 176, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
+.quote2 h3 {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+/* line 179, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
 .quote2 h4 {
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
-/* line 182, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
+/* line 185, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
 .malaimes h6 {
   color: #ffffff;
-  font-family: 'Marck Script', cursive;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 }
 
-/* line 187, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
+/* line 190, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
 table {
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 }
 
-/* line 195, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
+/* line 198, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
 .wrapper {
   width: 80%;
   margin: 0 auto;
 }
 
-/* line 200, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
+/* line 203, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
 .clearfix:before, .clearfix:after {
   content: " ";
   display: table;
 }
 
-/* line 205, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
+/* line 208, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 209, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
+/* line 212, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
 .amama {
   background-image: url(/assets/main-5657d3306bcbe7608558cdec3323b2e3370d2b668970e0ca26105d453a31763f.jpg);
   width: 100%;
 }
 
-/* line 214, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
+/* line 217, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
 .columns-price {
   width: 90%;
   margin: auto;
   /*  display: flex;*/
 }
 
-/* line 220, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
+/* line 223, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
 .columns-price > div {
   width: 50%;
   float: left;
@@ -10064,7 +10067,7 @@ table {
   margin-top: -1px;
 }
 
-/* line 230, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
+/* line 233, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
 .left {
   font-size: 15px;
   font-weight: 300;
@@ -10073,7 +10076,7 @@ table {
   padding-left: 20px;
 }
 
-/* line 238, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
+/* line 241, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
 .right {
   font-size: 15px;
   font-weight: 700;
@@ -10082,12 +10085,12 @@ table {
   padding-right: 20px;
 }
 
-/* line 246, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
+/* line 249, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
 .columns-price > div:nth-child(odd) {
   border-right: 1px solid #e6e6e6;
 }
 
-/* line 250, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
+/* line 253, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
 .columns-price > div:hover {
   background: #f1ce76;
   border-bottom: 1px solid #f1ce76;
@@ -10095,12 +10098,12 @@ table {
   z-index: 1;
 }
 
-/* line 256, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
+/* line 259, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
 div.clear {
   clear: both;
 }
 
-/* line 257, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
+/* line 260, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/application.scss */
 .head .note {
   margin-top: 20px;
   font-size: 18px;
