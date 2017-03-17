@@ -41,7 +41,12 @@ class Admin::PostsController < ApplicationController
       end
     end
   end
-
+  def destroy
+    @post.destroy
+    respond_to do |format|
+      format.html { redirect_to admin_posts_url, notice: 'Вы удалили пост и все комментарии в нем.' }
+    end
+  end
   private
 
     def find_post

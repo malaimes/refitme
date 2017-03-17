@@ -23,7 +23,7 @@
 <td>
   <%= link_to 'Изменить', edit_admin_post_path(post), class: "btn btn--m"%>
   <%= link_to 'Детальнее', admin_post_path(post), class: "btn btn--m"%>
-  <%= link_to 'Удалить', admin_post_path(post), class: "btn btn--m"%>
+  <%= link_to 'Удалить'., admin_posts_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn--m" %>
 </td>
 </tr> 
 <% end %>                                     
