@@ -63,3 +63,14 @@ $(window).scroll(function(){
  	 }
 
 });
+
+// (function() {
+//   $(function() {
+//     return $('.clickable').on('click', function() {
+//     	window.location.href = 'https://refitme.com';
+//       return console.log('element clicked');
+//     });
+//   });
+
+// }).call(this);
+

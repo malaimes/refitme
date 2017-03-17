@@ -1,6 +1,7 @@
    <p id="intro">Прайс-лист на ремонт <%= @category.title %> </p>
   <div class="columns-price">
     <% @category.units.order("created_at ASC").each do |unit| %>
+
       <div class="unit-columns">
         <span class="left">
           <span class="service_name"><%= unit.title %></span>
@@ -9,6 +10,7 @@
           <%= unit.price %> грн.
         </span>    
       </div>
+
     <%end%>
   </div>
 <div class="clear"></div>

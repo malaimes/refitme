@@ -1,0 +1,37 @@
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to image_tag('refit222.png'), root_path %></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li> 
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <% if user_signed_in? %>
+
+            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+            <% if current_user.admin? %>
+            <li><%= link_to "Admin Dashboard", admin_types_path %></li>
+            <%end%>
+
+      <% else %>
+        <li class="has-dropdown">
+          <a href="#">Вход на сайт</a>
+          <ul class="dropdown">
+            <li><%= link_to '<i class="fa fa-user"></i> Вход'.html_safe, new_user_session_path %></li>
+            <li><%= link_to '<i class="fa fa-users"></i> Регистрация'.html_safe, new_user_registration_path %> </li>     
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li><%= link_to "Ремонт iPhone", root_path %></li>
+      <li><%= link_to "Новости и игры", posts_path %></li>
+    </ul>
+  </section>
+</nav>
