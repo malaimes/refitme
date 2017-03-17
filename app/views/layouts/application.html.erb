@@ -14,10 +14,10 @@
     <%= favicon_link_tag 'favicon.ico' %>
   </head>
   <body>
-    <%= render "layouts/preloader" %>
-    <%= render "layouts/navbar" %>
+    <%= render "layouts/shared/preloader" %>
+    <%= render "layouts/shared/navbar" %>
     <%= yield %>
-    <%= render "layouts/footer" %>
+    <%= render "layouts/shared/footer" %>
      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Marck+Script|Open+Sans+Condensed:300|Open+Sans:400italic|Kurale&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <%= javascript_include_tag "vendor/modernizr" %>

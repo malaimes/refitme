@@ -1,0 +1,22 @@
+<div class="sidebar" data-color="blue">
+  <div class="sidebar-wrapper">
+    <div class="logo">
+      <%= link_to image_tag('refit222.png'), admin_categories_path, :class => "simple-text"%>
+    </div>
+
+    <ul class="nav">
+      <li class="<%= active_class(admin_types_path) %>">
+        <%= link_to '<i class="fa fa-mobile"></i><p>Repair Types</p>'.html_safe, admin_types_path %>
+      </li>
+      <li class="<%= active_class(admin_categories_path) %>">
+        <%= link_to '<i class="fa fa-cogs fa-4x"></i><p>Repair Categories</p>'.html_safe, admin_categories_path %>
+      </li>
+      <li class="<%= active_class(admin_users_path) %>">
+        <%= link_to '<i class="fa fa-user"></i><p>Users</p>'.html_safe, admin_users_path %>
+      </li>
+      <li class="<%= active_class(admin_posts_path) %>">
+        <%= link_to '<i class="fa fa-file-text-o"></i><p>Posts</p>'.html_safe, admin_posts_path %>
+      </li>
+    </ul>
+  </div>
+</div>
