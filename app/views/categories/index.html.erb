@@ -2,24 +2,76 @@
 <% title "выездной ремонт iPhone Киев" %>
 <header class="bird-box">
       <div class="back-bird"></div>
-      <div class="logo"></div>
+      <div class="logo">
+    <h1>Выездной ремонт<br/> вашего iPhone и iPad</h1>
+
+      <ul class="advantages">
+        <li>
+          <%= image_tag('adv-clock.svg') %>
+          <p>Прибытие мастера в течение<br /> <b>1 часа</b> в любую точку Киева</p>
+        </li>
+        <li>
+          <%= image_tag('adv-screwdriver.svg') %>
+          <p>Квалифицированный ремонт<br /> при вас за <b>20 минут</b></p>
+        </li>
+        <li>
+          <%= image_tag('adv-gear.svg') %>
+          <p>Комплектующие оригинального<br/>качества с <b>гарантией</b></p>
+        </li>
+      </ul>
+      <a href="#myAnchor" rel="" id="anchor1" class="anchorLink">
+      <div class="mouse-down">
+        <div class="mouse">
+          <%= image_tag('mouse.svg') %>
+          <span id="mouse-wheel" class="wheel-mouse animate">
+          <%= image_tag('mouse-wheel.svg') %>
+          </span>
+        </div>
+        <br>Узнать стоимость ремонта
+      </div></a>
+      </div>
+
       <div class="fore-bird"></div>
 </header>
 
-<div data-magellan-expedition="fixed">
-  <dl class="sub-nav">
-    <dd data-magellan-arrival="how_we_work"><a href="#how_we_work">Как мы работаем</a></dd>
-    <dd data-magellan-arrival="phone"><a href="#phone">Цены на ремонт</a></dd>
-    <dd data-magellan-arrival="reason"><a href="#reason">Почему мы</a></dd>
-    <dd data-magellan-arrival="map"><a href="#map">Мы на карте</a></dd>
-    
-  </dl>
+<section class="content"><a name="myAnchor" id="myAnchor"><p style="display: none;">iPhones</p></a>
+  <article>
+<div class="memo" data-magellan-destination="phone">
+<a name="phone"></a>
+<div class="quote">
+ <h2>Выберите ваш девайс:</h2><h4 class="subheader">Детали исключительно оригинального качества.</h4></div>
+      </div>
+    <div class="clothes-pics">  
+      <ul class="small-block-grid-6", id="sidebar">
+      <% for category in @categories %>
+        <li class="post"><%= link_to image_tag(category.image, alt: "ремонт #{category.title} Киев".html_safe ), category_path(category), "data-reveal-id" => "myModal", remote: true, class: "image-category"%>
+          <div class="figcaption">Прайс для <%= category.title %> </div>
+        </li>
+      <% end %>
+      </ul>
+      <div class="clear"></div>
+  <div class="head">
+      <div class="note">Не нашли в списке свою неисправность?<br />Звоните по номеру <span>(063) 603 51 87</span>,
+        мы поможем!
+      </div>
+    </div>
+   
+  </div>
+</div>
+    </div>
+
 </div>
 
-<section class="content">
-  <article>
 
-
+<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <div class="row">
+    <div class="small-12 large-12 columns">
+      <div id="main"></div>
+    </div>
+  </div>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a> 
+</div>
+<hr>
 <div class="memo" data-magellan-destination="how_we_work">
 <a name="how_we_work"></a>
   <section id="main-content">
@@ -54,31 +106,7 @@
   </section>
 </div>   
 <hr>
-<div class="memo" data-magellan-destination="phone">
-<a name="phone"></a>
-<div class="quote">
- <h2>Выберите ваш девайс:</h2><h4 class="subheader">Детали исключительно оригинального качества.</h4></div>
-      </div>
-    <div class="clothes-pics">  
-      <ul class="small-block-grid-6", id="sidebar">
-      <% for category in @categories %>
-        <li class="post"><%= link_to image_tag(category.image, alt: "ремонт #{category.title} Киев".html_safe ), category_path(category), "data-reveal-id" => "myModal", remote: true, class: "image-category"%>
-          <div class="figcaption">Прайс для <%= category.title %> </div>
-        </li>
-      <% end %>
-      </ul>
-    </div>
-</div>
 
-
-<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <div class="row">
-    <div class="small-12 large-12 columns">
-      <div id="main"></div>
-    </div>
-  </div>
-  <a class="close-reveal-modal" aria-label="Close">&#215;</a> 
-</div>
 
 <div class="memo" data-magellan-destination="reason">
     <a name="reason"></a>

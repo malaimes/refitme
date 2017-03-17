@@ -25,3 +25,9 @@ window.addEventListener("load", function(){
 	document.body.removeChild(load_screen);
 
 });
+$('a').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top
+    }, 500);
+    return false;
+});

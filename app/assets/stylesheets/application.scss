@@ -21,27 +21,44 @@ body {
 
 .bird-box {
   position: relative;
-  height: 500px;
-  background-image: image-url('main.jpg');
+  max-width: 100%;
+  height: 600px;
+  background-image: image-url('pexels.jpg');
   background-size: auto;
   background-position: top center;
   background-attachment: fixed;
   overflow: hidden;
   z-index: 3;
 }
-
+.bird-box:after{
+  content: '';
+  position: absolute;
+  /*background: url("../images/header-back.png") no-repeat;*/
+  background: linear-gradient(to right,#cba9e1,#55acff);
+  background-size: cover;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  opacity: 0.8;
+}
 
 .logo {
   height: 179px;
   width: 100%;
-  background-image: image-url('qwer7.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 50%;
-  margin-top: -70px;
+  position: relative;
+  z-index: 2;
+  top: 15%;
+  text-align: center;
 }
 
+.bird-box .logo h1{
+  font-size: 68px;
+  color: #ffffff;
+  font-weight: bold;
+  
+  }
 .fore-bird {
   width: 960px;
   height: 733px;
@@ -54,18 +71,87 @@ body {
   top: 380px;
 }
 
-.back-bird {
-  width: 960px;
-    height: 298px;
-
-    background-image: image-url('qwe.png');
-    background-repeat: no-repeat;
-    background-position: top left;
-
-    position: absolute;
-    left: 50%;
-    margin-left: -480px;
+ul.advantages {
+  position: relative;
+  list-style-type: none;
+  padding: 40px 0;
+  margin: 0 auto;
+  white-space: nowrap;
 }
+
+ul.advantages li {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  margin-right: 40px;
+}
+
+ul.advantages li:last-child {
+  margin-right: 0;
+}
+
+ul.advantages li img {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+ul.advantages li p {
+  display: block;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+ul.advantages li p b {
+  color: #27464e;
+  font-weight: 900;
+}
+.bird-box .logo .mouse-down {
+  position: relative;
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
+  text-align: center;
+  color: #ffffff;
+}
+.bird-box .mouse-down img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.bird-box .mouse-down .mouse {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 32px;
+}
+.bird-box .mouse-down .wheel-mouse {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+}
+
+.bird-box .mouse-down .wheel-mouse.animate {
+  -webkit-transform: translateY(5px);
+  -moz-transform: translateY(5px);
+  transform: translateY(5px);
+}
+ 
 
 .content {
   position: relative;
@@ -75,7 +161,7 @@ body {
 
   article
     { 
-        padding: 50px 0;
+        padding: 30px 0;
         max-width: 1000px;
         margin: 0 auto;
         text-align: center;
