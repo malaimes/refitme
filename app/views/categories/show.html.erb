@@ -2,32 +2,6 @@
 <% title "выездной ремонт #{@category.title} в Киеве".html_safe %>
 <% meta_description "выездной ремонт #{@category.title} в Киеве".html_safe  %>
 
-
-<!-- Callupper code -->
-<script>
-    (function ()
-    {
-    var config = {
-        API_BASE: 'https://connect.callupper.com',
-        PROJECT_NAME: 'Callupper',
-    };
-
-    if (typeof window[config.PROJECT_NAME] === 'undefined' && typeof CallPluginInitObject === 'undefined') {
-        window['CallPluginInitObject'] = config;
-
-        var s = document.createElement('script');
-        s.type = 'text/javascript';
-        s.async = true;
-        s.src = config.API_BASE + '/static/api.js';
-        var x = document.getElementsByTagName('head')[0];
-        x.appendChild(s);
-    }
-    else
-        console.log(config.PROJECT_NAME + ' is already defined.');
-})();
-</script>
-<!-- Callupper code end -->
-
 <section class="content">
   <article>
 
@@ -74,3 +48,29 @@
 
   </article>
   </section>
+<%if Rails.env == "production"%>
+<!-- Callupper code -->
+<script>
+    (function ()
+    {
+    var config = {
+        API_BASE: window.location.protocol + '//connect.callupper.com',
+        PROJECT_NAME: 'Callupper',
+    };
+
+    if (typeof window[config.PROJECT_NAME] === 'undefined' && typeof CallPluginInitObject === 'undefined') {
+        window['CallPluginInitObject'] = config;
+
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = config.API_BASE + '/static/api.js';
+        var x = document.getElementsByTagName('head')[0];
+        x.appendChild(s);
+    }
+    else
+        console.log(config.PROJECT_NAME + ' is already defined.');
+})();
+</script>
+<!-- Callupper code end -->
+<%end%>
