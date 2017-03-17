@@ -9,10 +9,7 @@
     <meta name="description" content="Срочный выездной ремонт смартфонов Apple iPhone в Киеве с гарантией и оригинальными запчастями на выгодных условиях. А так же акции и скидки." />
     <meta name="keywords" content="Refitme, Киев, Apple, ремонт, iPhone, время" />
     <%= stylesheet_link_tag    "application" %>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Marck+Script|Open+Sans+Condensed:300|Open+Sans:400italic|Kurale&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application", params[:controller] %>
+   
     <%= csrf_meta_tags %>
     <%= favicon_link_tag 'favicon.ico' %>
   </head>
@@ -21,5 +18,9 @@
     <%= render "layouts/navbar" %>
     <%= yield %>
     <%= render "layouts/footer" %>
+     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Marck+Script|Open+Sans+Condensed:300|Open+Sans:400italic|Kurale&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", params[:controller] %>
   </body>
 </html>

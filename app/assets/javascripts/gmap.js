@@ -14,7 +14,6 @@ function initialize() {
 }
 
 var beaches = [
-
   ['Akademmistechko', 50.464936,30.355272],
   ['Nyvky', 50.458631,30.403915],
   ['PolitekhnichnyiInstytut', 50.450953,30.465144],
@@ -38,29 +37,10 @@ var beaches = [
   ['Kharkivska', 50.40073,30.652474],
   ['Soloma', 50.4206575,30.4565102],
   ['Voskresenka', 50.4802008,30.5992413],
-  ['Troya', 50.5162336,30.6022882],
-
-
-
+  ['Troya', 50.5162336,30.6022882]
 ];
 
 function setMarkers(map, locations) {
-  // Add markers to the map
-
-  // Marker sizes are expressed as a Size of X,Y
-  // where the origin of the image (0,0) is located
-  // in the top left of the image.
-
-  // Origins, anchor positions and coordinates of the marker
-  // increase in the X direction to the right and in
-  // the Y direction down.
-  
-  // Shapes define the clickable region of the icon.
-  // The type defines an HTML &lt;area&gt; element 'poly' which
-  // traces out a polygon as a series of X,Y points. The final
-  // coordinate closes the poly by connecting to the first
-  // coordinate.
-
   for (var i = 0; i < locations.length; i++) {
     var beach = locations[i];
     var myLatLng = new google.maps.LatLng(beach[1], beach[2]);
@@ -71,8 +51,6 @@ function setMarkers(map, locations) {
     });
   }
 }
-
-
 function loadScript() {
   var script = document.createElement('script');
   script.type = 'text/javascript';
@@ -82,4 +60,3 @@ function loadScript() {
     '&callback=initialize';
   document.body.appendChild(script);
 }
-
