@@ -20,10 +20,12 @@ class Admin::PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
 
-    if @post.save
-      redirect_to @post
-    else
-      render 'new'
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to admin_posts_url, notice: 'Добавлен новый пост.' }
+      else
+        format.html { render :new }
+      end
     end
   end
 
@@ -31,10 +33,12 @@ class Admin::PostsController < ApplicationController
   end
 
   def update
-    if @post.update(post_params)
-      redirect_to @post
-    else
-      render 'edit'
+    respond_to do |format|
+      if @post.update(post_params)
+        format.html { redirect_to admin_posts_url, notice: 'Пост отредактирован.' }
+      else
+        format.html { render :new }
+      end
     end
   end
 
@@ -45,7 +49,7 @@ class Admin::PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :link, :description, :image)
+      params.require(:post).permit(:title, :link, :description, :image, :seo_title, :seo_keywords, :seo_description)
     end
 
     def require_admin

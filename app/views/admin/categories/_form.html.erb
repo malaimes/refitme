@@ -13,6 +13,20 @@
             <div class="form-group">
                 <%= f.label :type %><br>
                 <%= f.select :type_id, Type.all.collect { |p| [ p.title, p.id ] }, include_blank: true %>  
+            </div>  
+            <hr>
+            <h3>SEO BLOCK</h3>
+            <div class="form-group">
+                <%= f.label :seo_title %>
+                <%= f.text_field :seo_title, :class => 'form-control' %>
+            </div>
+            <div class="form-group">
+                <%= f.label :seo_keywords %>
+                <%= f.text_field :seo_keywords, :class => 'form-control' %>
+            </div>
+            <div class="form-group">
+                <%= f.label :seo_description %>
+                <%= f.text_area :seo_description, :class => 'form-control', rows: 3 %>
             </div>                                        
         </div>
     </div>
