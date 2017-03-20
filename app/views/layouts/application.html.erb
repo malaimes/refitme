@@ -6,8 +6,11 @@
     <meta name='yandex-verification' content='7dffa55e5ef08cf1' />
     <meta name="google-site-verification" content="NreeFCM9gdgoYXOdTZLCNXnIfg01CJ36bjbjhqJP7dU" />
     <title>Refitme - <%= yield(:title)%></title>
-    <meta name="description" content="Срочный выездной ремонт смартфонов Apple iPhone в Киеве с гарантией и оригинальными запчастями на выгодных условиях. А так же акции и скидки." />
-    <meta name="keywords" content="Refitme, Киев, Apple, ремонт, iPhone, время" />
+    <meta name='description'
+      content='<%= yield_meta_tag(:description, 'Срочный выездной ремонт смартфонов Apple iPhone в Киеве с гарантией и оригинальными запчастями на выгодных условиях. А так же акции и скидки.') %>' />
+    <meta name='keywords'
+      content='<%= yield_meta_tag(:keywords, 'ремонт iphone, ремонт iphone киев, выездной ремонт iphone') %>' />
+
     <%= stylesheet_link_tag    "application" %>
    
     <%= csrf_meta_tags %>

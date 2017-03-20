@@ -1,5 +1,6 @@
-<% title "#{truncate(@post.title, :length => 30)}".html_safe %>
-<% meta_description "#{@post.title}".html_safe  %>
+<% title @post.seo_title %>
+<% meta_tag :description, @post.seo_description %>
+<% meta_tag :keywords, @post.seo_keywords %>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>

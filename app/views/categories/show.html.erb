@@ -1,6 +1,6 @@
-
 <% title @category.seo_title %>
-<% meta_description "выездной ремонт #{@category.title} в Киеве".html_safe  %>
+<% meta_tag :description, @category.seo_description %>
+<% meta_tag :keywords, @category.seo_keywords %>
 
 <section class="content">
   <article>
