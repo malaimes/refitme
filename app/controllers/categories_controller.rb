@@ -2,19 +2,28 @@ class CategoriesController < ApplicationController
 
   # GET /categories
   # GET /categories.json
+  respond_to :html
+  respond_to :js, only: :show
   def index
     @categories = Category.all.order("created_at ASC")
   end
 
-  # GET /categories/1
-  # GET /categories/1.json
   def show
-      @category = Category.find(params[:id])
-      @categories = Category.all # needed for sidebar, probably better to use a cell for this
-      respond_to do |format|
-        format.html # show.html.erb
-        format.js # show.js.erb
-      end
+    @category = Category.friendly.find(params[:id])
+    respond_with_category_or_redirect
   end
 
+  private
+
+    def respond_with_category_or_redirect
+      # If an old id or a numeric id was used to find the record, then
+      # the request path will not match the post_path, and we should do
+      # a 301 redirect that uses the current friendly id.
+      if request.path != category_path(@category)
+        return redirect_to @category, status: :moved_permanently
+      else
+        return respond_with @category
+      end
+    end
+  
 end
