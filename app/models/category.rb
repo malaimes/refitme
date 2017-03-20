@@ -9,12 +9,12 @@ class Category < ActiveRecord::Base
 
     # for genereate friendly_id
   def should_generate_new_friendly_id?
-    new_record? || slug.blank?
+    new_record? || title_changed?
   end
 
   # for locale sensitive transliteration with friendly_id
   def normalize_friendly_id(input)
-    input.to_s.to_slug.normalize.to_s
+    input.to_s.to_slug.transliterate(:russian).normalize.to_s
   end
   
 end

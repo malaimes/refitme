@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :find_post, only: [:show, :upvote, :downvote]
+	before_action :find_post, only: [:upvote, :downvote]
 	before_action :authenticate_user!, except: [:index, :show]
 
 
@@ -10,6 +10,10 @@ class PostsController < ApplicationController
 	def show
 		@comments = Comment.where(post_id: @post)
 		@random_post = Post.where.not(id: @post).order("RANDOM()").first
+		@post = Post.find(params[:id])
+		if request.path != post_path(@post)
+    	redirect_to @post, status: :moved_permanently
+  	end
 	end
 
 	def upvote
