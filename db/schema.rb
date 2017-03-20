@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317154523) do
+ActiveRecord::Schema.define(version: 20170320120732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,8 +25,10 @@ ActiveRecord::Schema.define(version: 20170317154523) do
     t.string   "seo_title"
     t.string   "seo_keywords"
     t.text     "seo_description"
+    t.string   "slug"
   end
 
+  add_index "categories", ["slug"], name: "index_categories_on_slug", using: :btree
   add_index "categories", ["type_id"], name: "index_categories_on_type_id", using: :btree
 
   create_table "comments", force: :cascade do |t|
