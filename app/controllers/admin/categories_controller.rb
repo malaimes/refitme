@@ -12,6 +12,7 @@ class Admin::CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    
     @categories = Category.all # needed for sidebar, probably better to use a cell for this
     respond_to do |format|
       format.html # show.html.erb
