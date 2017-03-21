@@ -20,7 +20,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'httparty'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-
+gem "js-routes"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.

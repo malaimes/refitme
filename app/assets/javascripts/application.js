@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require 'foundation/foundation' 
 //= require foundation
+//= require js-routes
 
 
 $(function(){ $(document).foundation(); });

@@ -178,7 +178,7 @@
 </article>
 </section>
 
-<%if Rails.env == "production"%>
+
 <!-- Callupper code -->
 <script>
 (function ()
@@ -194,7 +194,8 @@ window['CallPluginInitObject'] = config;
 var s = document.createElement('script');
 s.type = 'text/javascript';
 s.async = true;
-s.src = config.API_BASE + '/static/api.js';
+// s.src = config.API_BASE + '/static/api.js';
+s.src = '<%= asset_path('api.js')%>' ;
 var x = document.getElementsByTagName('head')[0];
 x.appendChild(s);
 }
@@ -203,4 +204,3 @@ console.log(config.PROJECT_NAME + ' is already defined.');
 })();
 </script>
 <!-- Callupper code end -->
-<%end%>
