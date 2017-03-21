@@ -178,7 +178,7 @@
 </article>
 </section>
 
-
+<%if Rails.env == "production"%>
 <!-- Callupper code -->
 <script>
 (function ()
@@ -204,3 +204,4 @@ console.log(config.PROJECT_NAME + ' is already defined.');
 })();
 </script>
 <!-- Callupper code end -->
+<%end%>
