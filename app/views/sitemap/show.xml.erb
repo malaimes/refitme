@@ -9,7 +9,7 @@
     <changefreq>daily</changefreq>
     <priority>1</priority>
   </url>
-  <% @categories.each do |post| %>
+  <% @categories.each do |category| %>
     <url>
       <loc><%= category_url(category) %></loc>
       <changefreq>daily</changefreq>
