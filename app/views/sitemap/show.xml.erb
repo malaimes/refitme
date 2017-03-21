@@ -6,12 +6,21 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc><%= root_url %></loc>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
+    <priority>1</priority>
   </url>
+  <% @categories.each do |post| %>
+    <url>
+      <loc><%= category_url(category) %></loc>
+      <changefreq>daily</changefreq>
+      <priority>0.75</priority>
+    </url>
+  <% end %>
   <% @posts.each do |post| %>
     <url>
       <loc><%= post_url(post) %></loc>
-      <changefreq>daily</changefreq>
+      <changefreq>weekly</changefreq>
+      <priority>0.25</priority>
     </url>
   <% end %>
 </urlset>
