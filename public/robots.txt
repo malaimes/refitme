@@ -1,0 +1,8 @@
+User-Agent: *
+Disallow: /auth/
+
+User-agent: Yandex
+Disallow: /auth/
+Host: refitme.com
+
+Sitemap: https://refitme.com/sitemap.xml
