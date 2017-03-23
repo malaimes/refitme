@@ -1,9 +1,0 @@
-@import url(animate.min.css);
-@import url(bootstrap.min.css);
-@import url(demo.css);
-@import url(light-bootstrap-dashboard.css);
-@import url(pe-icon-7-stroke.css);
-/* line 8, /Users/malaimes/DEVELOPMENT/railsproject/refitme/app/assets/stylesheets/admin/application.scss */
-.sidebar {
-  background-image: url(/assets/sidebar-5-468ecc8f7accbb80ea8c4ed77aaafa93759bc80f70c57a2a1682b39723399e46.jpg);
-}
