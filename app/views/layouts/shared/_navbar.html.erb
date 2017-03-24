@@ -21,8 +21,8 @@
         <li class="has-dropdown">
           <a href="#">Вход на сайт</a>
           <ul class="dropdown">
-            <li><%= link_to '<i class="fa fa-user"></i> Вход'.html_safe, new_user_session_path %></li>
-            <li><%= link_to '<i class="fa fa-users"></i> Регистрация'.html_safe, new_user_registration_path %> </li>     
+            <li><%= link_to '<i class="fa fa-user"></i> Вход'.html_safe, new_user_session_path, :rel => 'nofollow' %></li>
+            <li><%= link_to '<i class="fa fa-users"></i> Регистрация'.html_safe, new_user_registration_path, :rel => 'nofollow'  %> </li>     
           </ul>
         </li>
       <% end %>

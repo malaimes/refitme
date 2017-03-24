@@ -31,11 +31,11 @@
     </div>
     <div class="post_data">
       <%= link_to "Visit Link", @post.link, class: "btn btn--m", :target => "_blank" %>
-      <%= link_to like_post_path(@post), method: :get, class: "data" do %>
+      <%= link_to like_post_path(@post), method: :get, class: "data", :rel => 'nofollow'  do %>
         <i class="fa fa-thumbs-o-up"></i>
         <%= pluralize(@post.get_upvotes.size, "Like") %>
       <% end %>
-      <%= link_to dislike_post_path(@post), method: :get, class: "data" do %>
+      <%= link_to dislike_post_path(@post), method: :get, class: "data", :rel => 'nofollow'  do %>
         <i class="fa fa-thumbs-o-down"></i>
         <%= pluralize(@post.get_downvotes.size, "Dislike") %>
       <% end %>
@@ -100,7 +100,9 @@
       </p>
     </div>
   <% end %>
+  <% if user_signed_in? %>
   <%= render "comments/form" %>
+  <%end%>
 </div>
 </article>
 </section>
