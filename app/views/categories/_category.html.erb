@@ -1,35 +1,25 @@
-   <p id="intro">Прайс-лист на ремонт <%= @category.title %> </p>
-  <div class="columns-price">
-    <% @category.units.order("created_at ASC").each do |unit| %>
+<p id="intro">Прайс-лист на ремонт <%= @category.title %></p>
 
-      <div class="unit-columns">
-        <span class="left">
-          <span class="service_name"><%= truncate(unit.title, :length => 38) %></span>
-        </span>
-        <span class="right">
-          <%= unit.price %> грн.
-        </span>    
-      </div>
-
-    <%end%>
-  </div>
-<div class="clear"></div>
-  <div class="head">
-      <div class="note">Не нашли в списке свою неисправность?<br />Звоните по номеру <span>(063) 603 51 87</span>,
-        мы поможем!
-      </div>
+<div class="columns-price">  
+  <% @category.units.order("created_at ASC").each do |unit| %>
+    <div class="unit-columns">
+      <span class="left">
+        <span class="service_name"><%= truncate(unit.title, :length => 38) %></span>
+      </span>
+      <span class="right">
+        <%= unit.price %> грн.
+      </span>    
     </div>
-   
-  </div>
+  <%end%>
 </div>
 
+<div class="clear"></div>
 
-
+<div class="head">
+  <div class="note">Не нашли в списке свою неисправность?<br/>Звоните по номеру <span>(063) 603 51 87</span>, мы поможем!
+  </div>
+</div>
 
 <% category.units.each do |unit| %>
   <p><%= unit.tooltip %></p>
 <% end %>
-
-
-
-

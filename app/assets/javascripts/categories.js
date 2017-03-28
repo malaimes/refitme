@@ -1,4 +1,5 @@
 //= require gmap
+//= require jquery.maskedinput.js
 $(window).scroll(function(){
 
   var wScroll = $(this).scrollTop();

@@ -5,72 +5,36 @@
 <section class="content">
   <article>
 
-<div class="row clearfix">
-  <div class="small-3 large-3 columns">
-  <div style="margin-top: 50px;">
-    <%= image_tag(@category.image, alt: "ремонт #{@category.title} Киев".html_safe)  %>
-    </div>
-  </div>
+    <div class="row clearfix">
 
+      <div class="small-3 large-3 columns">
+        <div style="margin-top: 50px;">
+          <%= image_tag(@category.image, alt: "ремонт #{@category.title} Киев".html_safe)  %>
+        </div>
+      </div>
 
-<div class="small-9 large-9 columns">
-
-   <p id="intro">Прайс-лист на ремонт</p>
-  <div class="columns-price">
-    <% @category.units.order("created_at ASC").each do |unit| %>
-
-      <div class="unit-columns">
- 
-        <span class="left">
-          <span class="service_name"><%= truncate(unit.title, :length => 38) %></span>
-        </span>
-        <span class="right">
-          <%= unit.price %> грн.
-        </span>    
-
+      <div class="small-9 large-9 columns">
+        <p id="intro">Прайс-лист на ремонт</p>
+        <div class="columns-price">
+          <% @category.units.order("created_at ASC").each do |unit| %>
+          <div class="unit-columns">
+            <span class="left">
+              <span class="service_name"><%= truncate(unit.title, :length => 38) %></span>
+            </span>
+            <span class="right"><%= unit.price %> грн.</span>    
+          </div>
+          <%end%>
+        </div>
+        <div class="clear"></div>
+        <div class="head">
+          <div class="note">Не нашли в списке свою неисправность?<br/>Звоните по номеру <span>(063) 603 51 87</span>, мы поможем!
+          </div>
+        </div>
       </div>
       
-    <%end%>
-  </div>
-<div class="clear"></div>
-  <div class="head">
-      <div class="note">Не нашли в списке свою неисправность?<br />Звоните по номеру <span>(063) 603 51 87</span>,
-        мы поможем!
-      </div>
     </div>
-   
-  </div>
-</div>
-
-</div>
- 
-
 
   </article>
-  </section>
-<%if Rails.env == "production"%>
-<!-- Callupper code -->
-<script>
-    (function ()
-    {
-    var config = {
-        API_BASE: window.location.protocol + '//connect.callupper.com',
-        PROJECT_NAME: 'Callupper',
-    };
+</section>
 
-    if (typeof window[config.PROJECT_NAME] === 'undefined' && typeof CallPluginInitObject === 'undefined') {
-        window['CallPluginInitObject'] = config;
-
-        var s = document.createElement('script');
-        s.type = 'text/javascript';
-        s.async = true;
-        s.src = config.API_BASE + '/static/api.js';
-        var x = document.getElementsByTagName('head')[0];
-        x.appendChild(s);
-    }
-    else
-        console.log(config.PROJECT_NAME + ' is already defined.');
-})();
-</script>
-<!-- Callupper code end -->
-<%end%>
+<%= render "categories/shared/callupper" %>

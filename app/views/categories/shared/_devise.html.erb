@@ -1,0 +1,22 @@
+<div class="memo" data-magellan-destination="phone">
+  <a name="phone"></a>
+  <div class="quote">
+    <h2>Выберите ваш девайс:</h2>
+    <h4 class="subheader">Детали исключительно оригинального качества.</h4>
+  </div>
+</div>
+<div class="clothes-pics">  
+  <ul class="small-block-grid-6", id="sidebar">
+    <% for category in @categories %>
+      <li class="post">
+        <%= link_to image_tag(category.image, alt: "ремонт #{category.title} Киев".html_safe ), category_path(category), "data-reveal-id" => "myModal", remote: true, class: "image-category"%>
+        <div class="figcaption">Прайс для <%= category.title %> </div>
+      </li>
+    <% end %>
+  </ul>
+  <div class="head">
+    <div class="note">
+      Не нашли в списке свою неисправность?<br />Звоните по номеру <span>(063) 603 51 87</span>, мы поможем!
+    </div>
+  </div>
+</div>
